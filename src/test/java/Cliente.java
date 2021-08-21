@@ -12,10 +12,10 @@ public class Cliente {
     private String nombre;
     private int edad;
 
-    private int numCelular;
+    private long numCelular;
     private boolean rentando;
 
-    public Cliente(String nombre, int edad, int numCelular) {
+    public Cliente(String nombre, int edad, long numCelular) {
         this.nombre = nombre;
         this.edad = edad;
 
@@ -31,7 +31,7 @@ public class Cliente {
         return edad;
     }
 
-    public int getNumCelular() {
+    public long getNumCelular() {
         return numCelular;
     }
 

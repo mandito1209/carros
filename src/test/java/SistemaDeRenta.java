@@ -1,40 +1,38 @@
-public class SistemaDeRenta {
-    private String fechaD;
-    private String fechaR;
-    private String ciudadD;
-    private String ciudadR;
-    private int numRenta;
-    private int dias;
-    private int id;
+import java.util.ArrayList;
 
-    public SistemaDeRenta(String fechaD, String fechaR, String ciudadD, String ciudadR,int dias,int id) {
-        this.fechaD = fechaD;
-        int ren=(int)(Math. random()9999+1000);
-        this.fechaR = fechaR;
-        this.ciudadD = ciudadD;
-        this.ciudadR = ciudadR;
-        numRenta=ren;
-        this.dias=dias;
-        this.id=id;
+public class SistemaDeRenta {
+    private ArrayList<Renta> rentas;
+    private ArrayList<Cliente> clientes;
+    //private Renta renta;
+
+    public SistemaDeRenta() {
+        rentas=new ArrayList<Renta>(30);
+        clientes=new ArrayList<Cliente>(30);
+
     }
 
-    public String recibo(Inventario inventario, Cliente cliente){
-        float precio;
+    public void añadirRenta(Cliente cliente,Renta renta, Inventario inventario){
+        clientes.add(cliente);
+        rentas.add(renta);
+        renta.recibo(inventario, cliente); }
 
-        Carro auto=inventario.buscar(id);
-        precio=(auto.getCostoRenta())*dias;
+    public void devolverRenta(int id){
+        Renta renta;
 
-        return "Renta de automovil"+"Datos del cliente\n------------------------------\nNombre: "+
-                cliente.getNombre()+"\nNumero telefonico: "+cliente.getNumCelular()+"\nCodigo de renta"+numRenta
-                + "\nDatos del auto \n------------------------------\nModelo: "+auto.getModelo()+
-                "\nTipo: "+auto.getTipo()+"\nColor: "+auto.getColor()+"\nAño: "+auto.getAño()+"\nMatricula: "
-                +auto.getMatricula()+"\nNumero de serie: "+auto.getNumSerie()+"\nNumero maximo de pasajeros: "+
-                auto.getNumPasajeros()+"\nKilometraje: "+auto.getKilometraje()+"\nFecha de devolucion: "+fechaD+
-                "\nFecha de renta: "+fechaR+"\nCiudad de devolucion: "+ciudadD+"\nCiudad de renta: "+ciudadR
-                +"\nDias de renta: "+dias+"\n\n\nCosto por dia: "+auto.getCostoRenta()+" x "
-                +dias+"\n     Total = "+precio;}
+        for(int i=0;i<rentas.size();i++){
+            renta=rentas.get(i);
+            if(id==(renta.getId()))
+                rentas.remove(renta);
+        }}
 
-    public int getId() {
-        return id;
+    public void buscarRenta(int id, Cliente cliente,Inventario inventario){
+        Renta renta;
+
+        for(int i=0;i<rentas.size();i++){
+            renta=rentas.get(i);
+            renta=rentas.get(i);
+            if(id==renta.getId())
+                renta.recibo(inventario, cliente);
+        }
     }
 }

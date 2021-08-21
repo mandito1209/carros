@@ -4,11 +4,11 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         Inventario inventario=new Inventario();
-        SistemaDeRentaVerdadero sistema=new SistemaDeRentaVerdadero();
+        SistemaDeRenta sistema=new SistemaDeRenta();
         int op;
         Scanner sc = new Scanner(System.in);
         do{
-            int id;
+            //int id;
             System.out.println("\nDesea realizar alguna renta o devolucion?"
                     + "\n1. Si"
                     + "\n2. No");
@@ -23,10 +23,11 @@ public class Main {
                         + "Cajero"
                         + "\n3. Dar de baja un auto"
                         + "\n4. Dar de alta un auto.");
+
                 int opc = sc.nextInt();
-                switch(op){
+                switch(opc){
                     case 1: inventario.toString();
-                        sistema.añadirRenta(registro(),SistemaDeRenta(),inventario);
+                        sistema.añadirRenta(registro(),renta(),inventario);
                         break;
 
 
@@ -40,26 +41,27 @@ public class Main {
                     case 4: inventario.alta(alta());
                         break;
 
-
                 }
             }
             else System.out.println("\nGracias por acceder a nuestro sistema de rentas, vuleva pronto");
+
         }
         while(op==1);
     }
     public static Cliente registro(){
         Scanner sc = new Scanner(System.in);
+
         System.out.println("\nIngrese su nombre\n");
         String nombre = sc.nextLine();
         System.out.println("\nIngrese su edad\n");
         int edad=sc.nextInt();
         System.out.println("\nIngrese su numero celular\n");
-        int numCelular=sc.nextInt();
+        long numCelular=sc.nextLong();
         Cliente cliente=new Cliente(nombre,edad,numCelular);
         return cliente;}
 
 
-    public static SistemaDeRenta renta(){
+    public static Renta renta(){
         Scanner sc = new Scanner(System.in);
         System.out.println("\nIngrese la fecha de salida\n");
         String fechaR = sc.nextLine();
@@ -73,7 +75,7 @@ public class Main {
         int dias = sc.nextInt();
         System.out.println("\nIngrese el numero del ID del vehiculo que desea rentar \n");
         int id = sc.nextInt();
-        SistemaDeRenta renta=new SistemaDeRenta(fechaR,fechaD,ciudadR,ciudadD,dias,id);
+        Renta renta=new Renta(fechaR,fechaD,ciudadR,ciudadD,dias,id);
         return renta;}
 
     public static int id(){
@@ -81,7 +83,6 @@ public class Main {
         System.out.println("Ingrese el ID del vehiculo");
         int id = sc.nextInt();
         return id;}
-
     public static Carro alta(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el modelo del vehiculo");
@@ -107,6 +108,9 @@ public class Main {
 
         Carro alta=new Carro(modelo,tipo,color,matricula,numSerie,año,numPasajeros,kilometraje,costoRenta,id);
         return alta;}
+
+
+
 
 }
 
