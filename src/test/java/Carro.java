@@ -1,107 +1,91 @@
 
 public class Carro {
-    private int año;
     private String modelo;
     private String tipo;
     private String color;
     private String matricula;
-    private String numSerie;
+    private int numSerie;
+    private int año;
     private int numPasajeros;
-    private int millasRecorridas;
+    private int kilometraje;
     private float costoRenta;
-    private boolean disp;
+    private boolean disponibilidad;
+    private int id;
 
-    public Carro(int año,String modelo, String tipo, String color, String matricula, String numSerie, int numPasajeros, int millasRecorridas, float costoRenta, boolean disp) {
+    public Carro(String modelo, String tipo, String color, String matricula, int numSerie, int año, int numPasajeros, int kilometraje, float costoRenta,int id) {
+        this.modelo = modelo;
+        this.tipo = tipo;
+        this.color = color;
+        this.matricula = matricula;
+        this.numSerie = numSerie;
         this.año = año;
-        this.modelo=modelo;
-        this.tipo=tipo;
-        this.color=color;
-        this.matricula=matricula;
-        this.numSerie=numSerie;
-        this.numPasajeros=numPasajeros;
-        this.millasRecorridas=millasRecorridas;
-        this.costoRenta=costoRenta;
-        this.disp=disp;
+        this.numPasajeros = numPasajeros;
+        this.kilometraje = kilometraje;
+        this.costoRenta = costoRenta;
+        disponibilidad = true;
+        this.id=id;
     }
-
-    public int getAño() {
-        return año;
-    }
-
-    public void setAño(int año) {
-        this.año = año;
-    }
+    public String informacion(){
+        return "Modelo: "+modelo+"\nTipo: "+tipo+"\nColor: "+color+"\nMatricula: "+
+                "\nNo. de serie: "+numSerie+"\nAño: "+año+"\nNo. de pasajeros: "+numPasajeros+
+                "\nKilometraje: "+kilometraje+"\nCosto de renta por dia: "
+                +costoRenta+" pesos\nDisponibilidad: "+disponibilidad;}
 
     public String getModelo() {
         return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
     }
 
     public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     public String getColor() {
         return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public String getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getNumSerie() {
+    public int getNumSerie() {
         return numSerie;
     }
 
-    public void setNumSerie(String numSerie) {
-        this.numSerie = numSerie;
+    public int getAño() {
+        return año;
     }
-
     public int getNumPasajeros() {
         return numPasajeros;
     }
 
-    public void setNumPasajeros(int numPasajeros) {
-        this.numPasajeros = numPasajeros;
-    }
-
-    public int getMillasRecorridas() {
-        return millasRecorridas;
-    }
-
-    public void setMillasRecorridas(int millasRecorridas) {
-        this.millasRecorridas = millasRecorridas;
+    public int getKilometraje() {
+        return kilometraje;
     }
 
     public float getCostoRenta() {
         return costoRenta;
     }
 
-    public void setCostoRenta(float costoRenta) {
-        this.costoRenta = costoRenta;
+    public boolean isDisponibilidad() {
+        return disponibilidad;
     }
 
-    public boolean isDisp() {
-        return disp;
+    public void setDisponibilidad(boolean disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
 
-    public void setDisp(boolean disp) {
-        this.disp = disp;
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "\nAuto{" + "modelo=" + modelo + ", tipo=" + tipo + ", color=" + color + ", matricula=" + matricula + ", numSerie=" + numSerie + ", a\u00f1o=" + año + ", numPasajeros=" + numPasajeros + ", kilometraje=" + kilometraje + ", costoRenta=" + costoRenta + ", disponibilidad=" + disponibilidad + ", id=" + id + '}';
+    }
+
 }
 
