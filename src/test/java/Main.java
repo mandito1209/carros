@@ -19,14 +19,14 @@ public class Main {
                         + "\nCliente"
                         + "\n1. Rentar auto"
                         + "\n2. Devolver auto"
-                        + "-------------------------------"
-                        + "Cajero"
+                        + "\n-------------------------------"
+                        + "\nCajero"
                         + "\n3. Dar de baja un auto"
                         + "\n4. Dar de alta un auto.");
 
                 int opc = sc.nextInt();
                 switch(opc){
-                    case 1: inventario.toString();
+                    case 1: inventario.imprimirLista();
                         sistema.añadirRenta(registro(),renta(),inventario);
                         break;
 
@@ -40,14 +40,16 @@ public class Main {
 
                     case 4: inventario.alta(alta());
                         break;
-
                 }
             }
             else System.out.println("\nGracias por acceder a nuestro sistema de rentas, vuleva pronto");
 
+
+
         }
         while(op==1);
     }
+
     public static Cliente registro(){
         Scanner sc = new Scanner(System.in);
 
@@ -59,8 +61,6 @@ public class Main {
         long numCelular=sc.nextLong();
         Cliente cliente=new Cliente(nombre,edad,numCelular);
         return cliente;}
-
-
     public static Renta renta(){
         Scanner sc = new Scanner(System.in);
         System.out.println("\nIngrese la fecha de salida\n");
@@ -75,7 +75,7 @@ public class Main {
         int dias = sc.nextInt();
         System.out.println("\nIngrese el numero del ID del vehiculo que desea rentar \n");
         int id = sc.nextInt();
-        Renta renta=new Renta(fechaR,fechaD,ciudadR,ciudadD,dias,id);
+        Renta renta=new Renta(fechaD,fechaR,ciudadD,ciudadR,dias,id);
         return renta;}
 
     public static int id(){
@@ -108,9 +108,6 @@ public class Main {
 
         Carro alta=new Carro(modelo,tipo,color,matricula,numSerie,año,numPasajeros,kilometraje,costoRenta,id);
         return alta;}
-
-
-
 
 }
 

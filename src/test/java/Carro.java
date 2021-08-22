@@ -25,11 +25,6 @@ public class Carro {
         disponibilidad = true;
         this.id=id;
     }
-    public String informacion(){
-        return "Modelo: "+modelo+"\nTipo: "+tipo+"\nColor: "+color+"\nMatricula: "+
-                "\nNo. de serie: "+numSerie+"\nAño: "+año+"\nNo. de pasajeros: "+numPasajeros+
-                "\nKilometraje: "+kilometraje+"\nCosto de renta por dia: "
-                +costoRenta+" pesos\nDisponibilidad: "+disponibilidad;}
 
     public String getModelo() {
         return modelo;
@@ -54,6 +49,7 @@ public class Carro {
     public int getAño() {
         return año;
     }
+
     public int getNumPasajeros() {
         return numPasajeros;
     }
@@ -82,10 +78,14 @@ public class Carro {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "\nAuto{" + "modelo=" + modelo + ", tipo=" + tipo + ", color=" + color + ", matricula=" + matricula + ", numSerie=" + numSerie + ", a\u00f1o=" + año + ", numPasajeros=" + numPasajeros + ", kilometraje=" + kilometraje + ", costoRenta=" + costoRenta + ", disponibilidad=" + disponibilidad + ", id=" + id + '}';
+    public String informacion(){
+        return "Modelo: "+modelo+"\nTipo: "+tipo+"\nColor: "+color+"\nMatricula: "+
+                "\nNo. de serie: "+numSerie+"\nAño: "+año+"\nNo. de pasajeros: "+numPasajeros+
+                "\nKilometraje: "+kilometraje+"\nCosto de renta por dia: "
+                +costoRenta+" pesos\nDisponibilidad: "+disponibilidad;}
+
+
+    public void imprimirA() {
+        System.out.println("\nAuto{" + "Modelo= " + modelo + ", Tipo= " + tipo + ", Color= " + color + ", Matricula= " + matricula + ", Numero de serie= " + numSerie + ", Año= " + año + ", Numero de pasajeros= " + numPasajeros + ", Kilometraje= " + kilometraje + ", Costo de renta pot dia= " + costoRenta + ", Disponibilidad= " + disponibilidad + ", ID= " + id + '}');
     }
-
 }
-

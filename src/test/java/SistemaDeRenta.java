@@ -35,4 +35,27 @@ public class SistemaDeRenta {
                 renta.recibo(inventario, cliente);
         }
     }
+
+    public void imprimirRentas(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }

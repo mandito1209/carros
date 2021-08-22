@@ -89,6 +89,6 @@ public class Inventario {
     public void imprimirLista(){
         for(int i=0;i<autos.size();i++){
             auto=autos.get(i);
-            auto.toString();}}
+            auto.imprimirA();}}
 
 }
